@@ -1,0 +1,1 @@
+{"type":"Scene","props":{"width":720,"height":1280},"compId":1,"child":[{"type":"Sprite","props":{"y":434,"x":239,"texture":"airwar/gameRole/enemy3_down4.png"},"compId":3}],"loadList":["airwar/gameRole/enemy3_down4.png"],"loadList3D":[],"components":[]}
