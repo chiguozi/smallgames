@@ -1,3 +1,5 @@
+import SScene from "../Core/Scene/SScene"
+import SSceneManager from "../Core/Scene/SSceneManager";
 export default class MainScene extends Laya.Script
 {
     private startBtn:Laya.Image;
@@ -11,7 +13,8 @@ export default class MainScene extends Laya.Script
 
     private onBtnClick()
     {
-        Laya.Scene.open("AirWar/AirWar.scene");
+        SSceneManager.Instance.goToScene(1);
+        //Laya.Scene.open("AirWar/AirWar.scene");
     }
 
 }
