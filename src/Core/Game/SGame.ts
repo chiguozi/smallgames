@@ -1,11 +1,15 @@
 import IGame from "./IGame";
-export default class SGame implements IGame
+import SShareEventObject from "./SShareEventObject";
+export default class SGame extends SShareEventObject implements IGame
 {
     private hasStarted = false;
 
-    public init()
-    {}
 
+    public init(eventDispatcher)
+    {
+        super.init(eventDispatcher);
+    }
+    
     public start()
     {
         this.hasStarted = true;
@@ -27,15 +31,14 @@ export default class SGame implements IGame
     public quit()
     {
     }
-
-    protected clear()
-    {
-
-    }
-
     public update()
     {
         if(!this.hasStarted)
             return;
+    }
+
+    protected clear()
+    {
+
     }
 }
