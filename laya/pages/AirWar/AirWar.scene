@@ -2,7 +2,7 @@
     "x":0,
     "type":"Scene",
     "selectedBox":1,
-    "selecteID":5,
+    "selecteID":4,
     "props":{"width":720,"sceneColor":"#000000","height":1280},
     "nodeParent":-1,
     "label":"Scene",
@@ -31,10 +31,27 @@
             "props":{"y":-1280,"x":0,"texture":"airwar/background.png","name":"bg2"},
             "nodeParent":1,
             "label":"bg2",
+            "isOpen":true,
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
             "compId":5,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Script",
+            "switchAble":true,
+            "source":"src/Games/AirWar/AirWarMapScript.ts",
+            "removeAble":true,
+            "props":{"y":-1280,"x":0},
+            "nodeParent":1,
+            "label":"AirWarMapScript",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":6,
             "child":[
                 ]
         }],

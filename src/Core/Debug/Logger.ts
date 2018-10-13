@@ -40,7 +40,7 @@ export default class Logger
 
     private static getLogContent(pre:string, content:string):string
     {
-        return "[" + pre + new Date().toLocaleTimeString() + "]:" + content;
+        return "[" + pre + ":(" + new Date().toLocaleTimeString() + ")]:" + content;
     }
     private static checkCanLog(logLevel:LogLevel)
     {
