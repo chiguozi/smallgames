@@ -7,4 +7,5 @@ export default interface IGame
     quit();
     update();
     restart();
+    showMenu();
 }

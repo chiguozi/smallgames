@@ -12,20 +12,28 @@ export default class SSceneManager
         return this._instance;
     }
 
-    public goToScene(sceneId)
+    public goToScene(sceneId, complete:Laya.Handler)
     {
         if(this.currentScene && this.currentScene.sceneId == sceneId)
         {
             return;
         }
         this.exitScene();
-        this.enterScene(sceneId);
+        this.enterScene(sceneId, complete);
     }
 
-    protected enterScene(sceneId)
+    public showCurScene()
+    {
+        if(this.currentScene != null)
+        {
+            this.currentScene.show();
+        }
+    }
+
+    protected enterScene(sceneId, complete:Laya.Handler)
     {
         this.currentScene = new SScene("AirWar/AirWar.scene");
-        this.currentScene.load();
+        this.currentScene.load(complete);
     }
 
     protected exitScene()

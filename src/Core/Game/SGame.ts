@@ -37,6 +37,11 @@ export default class SGame extends SShareEventObject implements IGame
             return;
     }
 
+    public showMenu()
+    {
+
+    }
+
     protected clear()
     {
 

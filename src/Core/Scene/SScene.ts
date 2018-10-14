@@ -15,6 +15,8 @@ export default class SScene
     public loadState:LoadState = LoadState.None;
     public sceneId:number;
 
+    private complete:Laya.Handler;
+
 
     constructor(path:string, autoDestroy = true)
     {
@@ -23,8 +25,9 @@ export default class SScene
         this.loadState = LoadState.None;
     }
     //加载场景
-    public load()
+    public load(complete:Laya.Handler)
     {
+        this.complete = complete;
         this.loadState = LoadState.Loading;
         Laya.Scene.open(this.scenePath, false, Laya.Handler.create(this, this.onLoaded));
     }
@@ -34,6 +37,18 @@ export default class SScene
     {
         this.loadState = LoadState.Loaded;
         this.scene = scene;
+        this.scene.visible = false;
+        //GameManager控制场景显示
+        if(this.complete)
+        {
+            this.complete.run();
+            this.complete = null;
+        }
+    }
+
+    public show()
+    {
+        this.scene.visible = true;
         this.onOpen();
     }
 
@@ -41,7 +56,6 @@ export default class SScene
     {
 
     }
-
     public exit()
     {
         if(this.scene)
