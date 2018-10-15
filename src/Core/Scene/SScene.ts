@@ -1,3 +1,7 @@
+import SShareEventObject from "../Game/SShareEventObject";
+import AirWarScene from "../../Games/AirWar/AirWarScene";
+
+//Scene相当于UI  提供ui和挂载组件
 enum LoadState
 {
     None = 1,
@@ -5,7 +9,7 @@ enum LoadState
     Loaded = 3,
     Destroyed = 4,
 }
-export default class SScene
+export default class SScene extends SShareEventObject
 {
     protected scenePath:string;
     protected sceneType:number;
@@ -17,11 +21,10 @@ export default class SScene
 
     private complete:Laya.Handler;
 
-
-    constructor(path:string, autoDestroy = true)
+    public init(sceneId)
     {
-        this.scenePath = path;
-        this.autoDestroy = autoDestroy;
+        // this.scenePath = path;
+        // this.autoDestroy = autoDestroy;
         this.loadState = LoadState.None;
     }
     //加载场景
@@ -38,7 +41,7 @@ export default class SScene
         this.loadState = LoadState.Loaded;
         this.scene = scene;
         this.scene.visible = false;
-        //GameManager控制场景显示
+        //game控制场景显示
         if(this.complete)
         {
             this.complete.run();
@@ -84,4 +87,21 @@ export default class SScene
 
     protected onDestroy()
     {}
+
+
+    public static create(sceneType, sceneName)
+    {
+        //读取配置、获取类型、创建对应场景
+        let scene = null;
+        switch(sceneType)
+        {
+            case 1:
+                scene = new AirWarScene();
+            break;
+            default:
+                scene = new SScene();
+        }
+        scene.init(sceneName);
+        return scene;
+    }
 }

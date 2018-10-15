@@ -1,6 +1,7 @@
 export default interface IGame
 {
-    init(eventDispatcher:Laya.EventDispatcher);
+    load();
+    init(cfg);
     start();
     pause();
     resume();

@@ -17,6 +17,7 @@ export default class SGameManager
     public goToGame(id)
     {
         this.initGame(id);
+        this.game.load();
     }
 
     //创建game
@@ -24,5 +25,8 @@ export default class SGameManager
     {
         this.game = new SGame();
     }
+
+
+
 
 }
