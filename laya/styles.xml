@@ -1,3 +1,4 @@
 <res>
    <item name="airwar/gameRole/bullet2.png" type="Sprite" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
+   <item name="airwar/gameUI/blank.png" type="Sprite" compress="0" pack="0" quality="80" props="sizeGrid=1,1,1,1" picType="0" scale="0"/>
 </res>
