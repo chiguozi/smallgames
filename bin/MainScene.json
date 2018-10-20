@@ -1,1 +1,0 @@
-{"type":"Scene","props":{"width":720,"height":1280},"compId":1,"child":[{"type":"Sprite","props":{"y":618.5,"x":280.5,"texture":"airwar/gameUI/start.png"},"compId":2},{"type":"Script","props":{"runtime":"Hall/MainScene.ts"},"compId":4}],"loadList":["airwar/gameUI/start.png"],"loadList3D":[],"components":[]}
