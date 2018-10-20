@@ -7,4 +7,4 @@ node_modules/
 !/bin/fileconfig.json
 !/bin/index.html
 package-lock.json
-
+.DS_Store
