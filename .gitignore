@@ -1,8 +1,10 @@
 bin/
 node_modules/
 .laya/
-!bin/libs/
-!bin/fileconfig.json
-!bin/index.html
+!/bin
+/bin/*
+!/bin/libs/
+!/bin/fileconfig.json
+!/bin/index.html
 package-lock.json
 
